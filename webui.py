@@ -77,6 +77,9 @@ def install_dependencies():
     print()
     # gpuchoice = input("Input> ").lower()
     gpuchoice = 'c'
+    import sys
+    if sys.platform != "darwin":
+        raise RuntimeError("Only Apple M Series GPUs are supported because this script is hardcoded.")
 
     if gpuchoice == "d":
         print_big_message("Once the installation ends, make sure to open webui.py with a text editor\nand add the --cpu flag to CMD_FLAGS.")
